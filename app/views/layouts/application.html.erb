@@ -33,7 +33,7 @@
             <%= link_to "Books", books_path, class:"fas fa-book-open nav-link texr-light" %>
           </li>
           <li>
-            <%= link_to "logout", destroy_user_session_path, method: :delete, class:"fas fa-sign-out-alt nav-link texr-light" %>
+            <%= link_to "Log out", destroy_user_session_path, method: :delete, class:"fas fa-sign-out-alt nav-link texr-light" %>
           </li>
         <% else %>
           <li>
@@ -43,10 +43,10 @@
             <%= link_to "About", home_about_path, class:"fas fa-link nav-link text-light" %>
           </li>
           <li>
-            <%= link_to "sign up", new_user_registration_path, class:"fas fa-user-plus nav-link texr-light" %>
+            <%= link_to "Sign up", new_user_registration_path, class:"fas fa-user-plus nav-link texr-light" %>
           </li>
           <li>
-            <%= link_to "login", new_user_session_path, class:"fas fa-sign-in-alt nav-link texr-light" %>
+            <%= link_to "Log in", new_user_session_path, class:"fas fa-sign-in-alt nav-link texr-light" %>
           </li>
         <% end %>
           </ul>

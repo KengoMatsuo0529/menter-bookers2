@@ -11,10 +11,10 @@
     <h1>User info</h1>
 
     <%= form_with model:@user, local:true do |f| %>
-    <h4>Name</h4>
+    <%= f.label :name, 'Name' %>
     <%= f.text_field :name, placeholder:"名前", class: "form-control" %>
     <h4>Image</h4>
-    <h4>Introduction</h4>
+    <%= f.label :introduction, 'Introduction' %>
     <%= f.text_field :introduction, autofocus: true, id:"inputName", placeholder:"自己紹介", class: "form-control" %>
     <%= f.submit "Update User", class: "btn btn-success" %>
     <% end %>
