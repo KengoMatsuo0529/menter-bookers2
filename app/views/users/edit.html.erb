@@ -13,7 +13,9 @@
     <%= form_with model:@user, local:true do |f| %>
     <%= f.label :name, 'Name' %>
     <%= f.text_field :name, placeholder:"名前", class: "form-control" %>
-    <h4>Image</h4>
+    <%= f.label :profile_image, '' %>
+    <%= attachment_image_tag @user, :profile_image, fallback: "no-img.png",size:"100x100", class:"attachment user profile_image fallback" %>
+    <%= f.attachment_field :profile_image %>
     <%= f.label :introduction, 'Introduction' %>
     <%= f.text_field :introduction, autofocus: true, id:"inputName", placeholder:"自己紹介", class: "form-control" %>
     <%= f.submit "Update User", class: "btn btn-success" %>
