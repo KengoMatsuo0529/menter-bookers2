@@ -1,0 +1,33 @@
+<p id="notice">
+ <%=  notice %></p>
+
+<div class="row">
+
+<%= render 'books/list', user: @user, book: @book %>
+
+<div class="col-md-8 offset-md-1">
+<h2>Book detail</h2>
+<table class="table table-hover table-inverse">
+
+  <tbody>
+        <tr>
+        <td> <%= link_to user_path(@user) do %>
+          <%= attachment_image_tag @user, :profile_image, fallback: "no-img.png", size:"40x40", class:"attachment user profile_image fallback" %>
+            <p><%= @user.name %></p>
+            </td>
+          <% end %>
+          <td><%= link_to book_path(@show_book.id) do %>
+            <p><%= @show_book.title %></p></td>
+          <% end %>
+      <td><p><%= @show_book.body %></p></td>
+
+      <% if @user.id == current_user.id %>
+      <td><%= link_to "Edit", edit_book_path, class:"btn btn-info btn-sm btm-block mb-3" %> </td>
+      <td><%= link_to "Destroy", book_path, method: :delete, class:"btn btn-danger btn-sm btm-block mb-3", "data-confirm" => "本当に削除しますか？" %></td>
+      <% end %>
+
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
