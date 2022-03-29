@@ -12,7 +12,6 @@
   <tbody>
         <tr>
         <td> <%= link_to user_path(@user) do %>
-          <%= attachment_image_tag @user, :profile_image, fallback: "no-img.png", size:"40x40", class:"attachment user profile_image fallback" %>
             <p><%= @user.name %></p>
             </td>
           <% end %>
